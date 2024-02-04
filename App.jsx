@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { View, StatusBar, SafeAreaView, Text } from 'react-native';
+import { View,  SafeAreaView, Text } from 'react-native';
 import { ContextProvider } from './utils/context/ContextProvider/ContextProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import HomeScreen from './App/Screens/HomeScreen/HomeScreen';
 import Authentification from './App/Screens/Auth/Authentification';
 import * as SecureStore from 'expo-secure-store';
-import { clerk } from '@clerk/clerk-expo/dist/singleton';
+import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
+import TabNavigation from './App/Navigation/TabNavigation';
 
 
 
@@ -36,9 +37,7 @@ export default function App() {
         <ContextProvider>
           <NavigationContainer>
             <SignedIn>
-              <View>
-                <HomeScreen />
-              </View>
+                <TabNavigation />
             </SignedIn>
             <SignedOut>
               <Authentification />
@@ -46,6 +45,7 @@ export default function App() {
           </NavigationContainer>
         </ContextProvider>
       </ClerkProvider>
+      <ExpoStatusBar style='auto'/>
     </>
   );
 }
