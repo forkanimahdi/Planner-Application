@@ -45,7 +45,7 @@ export default function App() {
           </NavigationContainer>
         </ContextProvider>
       </ClerkProvider>
-      <ExpoStatusBar style='auto'/>
+      <ExpoStatusBar backgroundColor='white' style='auto'/>
     </>
   );
 }

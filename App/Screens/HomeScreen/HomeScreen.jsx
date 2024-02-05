@@ -14,28 +14,28 @@ export default function HomeScreen() {
     }
 
     return (
-        <ScrollView>
-            <View className={` px-4`}>
+        <View className={` px-4`}>
                 <Header />
+                <View className="pb-3">
                 <View className=" py-2">
                     <Text className={`text-4xl font-extrabold`}>Hello, {user.firstName}</Text>
-                    <Text className={`text-xl font-extralight text-gray-400  mt-1`}>19 Tasks Today</Text>
+                    <Text className={`text-xl  text-gray-400  mt-1`}>19 Tasks Today</Text>
                 </View>
                 <View className={`flex-row items-center gap-x-3 p-4 mt-2 rounded-2xl bg-[#eaeaea] `}>
                     <AntDesign name="search1" size={24} color="black" />
                     <TextInput className="text-lg" placeholder='Search Task...' />
                 </View>
-                <View className={`mt-2 py-3 flex-row justify-between items-center`}>
-                    <Text className={`text-2xl font-extrabold `}>Categories</Text>
-                    <AntDesign name="right" size={24} color="black" />
+
                 </View>
+
                     
+        <ScrollView>
                 <CategorySection />
 
-                <View className="h-max bg-black">
+                <View className="h-screen bg-black">
                     
                 </View>
-            </View>
         </ScrollView>
+            </View>
     )
 }

@@ -9,7 +9,7 @@ export default function Authentification() {
 
   return (
    <>
-    {showGuideScreen && <GuideScreen />}
+    {showGuideScreen  && <GuideScreen onGuideScreenClose={handleGuideScreenClose} />}
     {!showGuideScreen && (
       <AuthNavigation />
     )}
